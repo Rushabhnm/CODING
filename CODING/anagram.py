@@ -1,13 +1,11 @@
-# ANAGRAM CHECK 1
+##### ANAGRAM CHECK 1 #####
 
-# def anagram_check(x,y):
-#     ans =  sorted(x) == sorted(y)
-#     print(ans)
-# anagram_check("rushabh","saumitra")
+def anagram_check(x,y):
+    ans =  sorted(x) == sorted(y)
+    print(ans)
+anagram_check("rushabh","saumitra")
 
-# ANAGRAM CHECK 2
-
-from collections import defaultdict
+##### ANAGRAM CHECK 2 #####
 
 def anagram_check1(x,y):
     for i in set(x):
@@ -17,13 +15,15 @@ def anagram_check1(x,y):
     print(True)
     return True
 
-# anagram_check1("rushabh","rushhba") 
+anagram_check1("rushabh","rushhba") 
 
 
 
+##### ANAGRAM CHECK 3 #####
 
+from collections import defaultdict
 
-def anagram_check1_dict(x,y):
+def anagram_check3(x,y):
     cx = defaultdict(lambda: 0)
     cy = defaultdict(lambda: 0)
 
@@ -39,46 +39,26 @@ def anagram_check1_dict(x,y):
         
     return True
 
+print(anagram_check3("google","logoge"))
 
-def group_anagrams(low):
-    anagram_group = defaultdict(list)
 
-    for word in low:
-        anagagramFound = False
-        for repr, loa in anagram_group.items():
-            if anagram_check1_dict(word, repr):
-                anagram_group[repr].append(word)
-                anagagramFound = True
-                break
-        
-        if not anagagramFound:
-            anagram_group[word].append(word)
+
+##### ANAGRAM CHECK 4 #####
+
+from collections import defaultdict
+
+def anagram_check4(word1,word2):
+    x = defaultdict(lambda:1)
+
+    for i in word1:
+        x[i]+=1
+
+    for j in word2:
+        if j not in x:
+            return "Not an anagram"
+        else:
+            x[j]-=1
     
-    return anagram_group
+    return "Anagram found"
 
-
-low = ["POT","TOP","CAT","OTP","MAP","TAC"]
-
-print(group_anagrams(low=low).values())
-                
-
-
-
-l = [1,1,1,1,1,3,3,4,4,5,5,6,6,6,6,6,6,7,7,8,9]
-
-target = 1
-
-
-def binSearch(arr, l,r, target):
-    if r < l:
-        return -1
-    
-    mid = (l+r)//2
-
-    if arr[mid] == target:
-        return mid
-    
-    if arr[mid] > target:
-        return binSearch(arr, l,mid-1, target)
-    else:
-        
+print(anagram_check4("google",'logoge'))
