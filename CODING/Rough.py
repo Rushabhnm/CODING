@@ -24,14 +24,11 @@
 
 # print(dict(x))
 
-from collections import defaultdict
 
-def anagram_group(words):
-    x = defaultdict(list)
-    for index, word in enumerate(words,1):
-        x[index]=word
-        
-    return x
-    
+##### sorting word #####
+# def sorting_words(words):
+#     for word in words:
+#         sorted_word = ''.join(sorted(word))
+#         print(sorted_word)
 
-print(anagram_group(["tap","pat","cat","bat","tac"]))
+# sorting_words(["rushabh","uma","navin"])

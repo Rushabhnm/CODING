@@ -59,10 +59,27 @@ from collections import defaultdict
 
 
 
-x = [1,4213,124,1214,112,312,131]
-y = ['a','ac','aw','cqe','qc','qw']
+# x = [1,4213,124,1214,112,312,131]
+# y = ['a','ac','aw','cqe','qc','qw']
 
-z = dict(zip(x,y))
-z.update({key:'' for key in x if key not in z})
+# z = dict(zip(x,y))
+# z.update({key:'' for key in x if key not in z})
 
-print(z)
+# print(z)
+
+
+# A ={1:"rush",2:"uma",3:"navin"}
+
+# for value in A:
+#     print(value)
+
+
+from collections import defaultdict
+
+x = defaultdict(list)
+
+for i in range(3):
+    for j in range(5):
+        x[i] = j
+
+print(x)
